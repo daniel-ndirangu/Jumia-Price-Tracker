@@ -4,13 +4,13 @@ from prefect.client.schemas.schedules import CronSchedule
 
 if __name__ == "__main__":
     schedule = CronSchedule(
-        cron="05 17 * * *",
+        cron="0 0 * * *",
         timezone="Africa/Nairobi"
     )
 
     flow.from_source(
         source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
-        entrypoint="flow.py:scrape_jumia"
+        entrypoint="jumia_flow.py:scrape_jumia"
     ).deploy(
         name="jumia_scraper",
         work_pool_name="jumia-managed-pool",
