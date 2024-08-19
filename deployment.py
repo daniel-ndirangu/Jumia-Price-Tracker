@@ -4,7 +4,7 @@ from prefect.schedules import CronSchedule
 
 if __name__ == "__main__":
     schedule = CronSchedule(
-        cron="35 16 * * *",
+        cron="45 16 * * *",
         timezone="Africa/Nairobi"
     )
 
