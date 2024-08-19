@@ -7,5 +7,6 @@ if __name__ == "__main__":
     ).deploy(
         name = "jumia_scraper",
         work_pool_name="jumia-managed-pool",
-        cron="20 16 * * *"
+        cron="35 16 * * *",
+        timezone="Africa/Nairobi"
     )
