@@ -1,10 +1,10 @@
 from prefect import flow
-from prefect.schedules import CronSchedule
+from prefect.client.schemas.schedules import CronSchedule
 
 
 if __name__ == "__main__":
     schedule = CronSchedule(
-        cron="45 16 * * *",
+        cron="50 16 * * *",
         timezone="Africa/Nairobi"
     )
 
