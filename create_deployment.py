@@ -14,5 +14,6 @@ if __name__ == "__main__":
     ).deploy(
         name="jumia_scraper",
         work_pool_name="jumia-managed-pool",
-        schedule=schedule
+        schedule=schedule,
+        requirements = ["requirements.txt"]
     )
