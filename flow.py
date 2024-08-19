@@ -9,3 +9,7 @@ def run_spider():
 @flow
 def scrape_jumia():
     run_spider()
+    
+       
+if __name__ == "__main__":
+    scrape_jumia()
