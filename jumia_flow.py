@@ -2,7 +2,7 @@ from prefect import flow, task
 import subprocess
 
 
-@task(retries=1)
+@task
 def run_spider():
     subprocess.run(["scrapy", "crawl", "products"])
     
