@@ -16,6 +16,6 @@ if __name__ == "__main__":
         work_pool_name="jumia-managed-pool",
         schedule=schedule,
         tags=["scraping", "jumia"],
-        job_variables={"pip_packages": ["scrapy", "pymongo", "datetime"]}
+        job_variables={"pip_packages": ["scrapy", "pymongo", "datetime"]},
         build=False
-    )
+        )
