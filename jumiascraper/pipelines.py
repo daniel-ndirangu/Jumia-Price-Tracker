@@ -51,16 +51,19 @@ class MongoDBTimeSeriesPipeline:
     def open_spider(self, spider):
         self.client = MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
-        self.collection = self.db[self.mongo_collection]
         
-        self.db.create_collection(
-            self.mongo_collection,
-            timeseries={
-                "timeField": "timestamp",
-                "metaField": "metadata"
-            }
-        )
-        
+        ## Check if the collection already exists
+        if self.mongo_collection not in self.db.list_collection_names():
+            self.collection = self.db[self.mongo_collection]
+            
+            self.db.create_collection(
+                self.mongo_collection,
+                timeseries={
+                    "timeField": "timestamp",
+                    "metaField": "metadata"
+                }
+            )
+            
         self.collection = self.db[self.mongo_collection]
 
     def close_spider(self, spider):
