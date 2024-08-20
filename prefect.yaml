@@ -7,10 +7,10 @@ name: jumiascraper
 prefect-version: 2.20.2
 
 # build section allows you to manage and build docker images
-build: null
+build:
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push: null
+push:
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
@@ -21,17 +21,32 @@ pull:
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
 - name: price-tracking-samsung
-  version: null
+  version:
   tags: []
-  description: null
+  description:
   entrypoint: jumia_flow.py:scrape_jumia
   parameters: {}
   work_pool:
     name: jumia-work-pool
-    work_queue_name: null
+    work_queue_name:
     job_variables: {}
   schedules:
-  - cron: 25 1 * * *
+  - cron: 30 2 * * *
+    timezone: Africa/Nairobi
+    day_or: true
+    active: true
+- name: jumia-price-tracking
+  version:
+  tags: []
+  description:
+  entrypoint: jumia_flow.py:run_scraper
+  parameters: {}
+  work_pool:
+    name: jumia-work-pool
+    work_queue_name:
+    job_variables: {}
+  schedules:
+  - cron: 25 2 * * *
     timezone: Africa/Nairobi
     day_or: true
     active: true
