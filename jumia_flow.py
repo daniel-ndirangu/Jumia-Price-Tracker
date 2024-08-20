@@ -8,7 +8,7 @@ def run_spider():
     
 @flow
 def scrape_jumia():
-    return run_spider()
+    run_spider()
     
        
 if __name__ == "__main__":

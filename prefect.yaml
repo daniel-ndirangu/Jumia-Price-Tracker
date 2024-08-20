@@ -31,7 +31,7 @@ deployments:
     work_queue_name: null
     job_variables: {}
   schedules:
-  - cron: 0 1 * * *
+  - cron: 25 1 * * *
     timezone: Africa/Nairobi
     day_or: true
     active: true
