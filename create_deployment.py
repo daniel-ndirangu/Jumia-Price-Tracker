@@ -15,6 +15,5 @@ if __name__ == "__main__":
         name="jumia_scraper",
         work_pool_name="jumia-managed-pool",
         schedule=schedule,
-        push=True,
         build=False
     )
