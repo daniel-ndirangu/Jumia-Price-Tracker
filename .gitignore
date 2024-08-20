@@ -1,3 +1,5 @@
 *settings.py
 *.csv
 **/__pycache__/
+*.yaml
+*.prefectignore
