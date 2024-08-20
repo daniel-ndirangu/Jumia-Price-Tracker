@@ -1,7 +1,7 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'scrape-jumia'
 ###
-name: jumia-price-tracker
+name: samsung_price_tracker
 description: null
 version: bd3e2e612c532b845de379f8be806af1
 # The work queue that will handle this deployment's runs
@@ -38,6 +38,6 @@ parameter_openapi_schema:
   properties: {}
   required: null
   definitions: null
-timestamp: '2024-08-20T09:55:30.415908+00:00'
+timestamp: '2024-08-20T18:13:16.041928+00:00'
 triggers: []
 enforce_parameter_schema: null
