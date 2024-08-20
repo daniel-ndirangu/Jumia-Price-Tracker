@@ -1,14 +1,15 @@
 from prefect import flow, task
 import subprocess
+import scrapy 
 
 
 @task
 def run_spider():
-    subprocess.run(["scrapy", "crawl", "products"])
+    return subprocess.run(["scrapy", "crawl", "products"])
     
 @flow
 def scrape_jumia():
-    run_spider()
+    return run_spider()
     
        
 if __name__ == "__main__":

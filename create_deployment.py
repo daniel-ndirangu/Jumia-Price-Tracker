@@ -4,7 +4,7 @@ from prefect.client.schemas.schedules import CronSchedule
 
 if __name__ == "__main__":
     schedule = CronSchedule(
-        cron="30 1 * * *",
+        cron="30 10 * * *",
         timezone="Africa/Nairobi"
     )
 
@@ -15,5 +15,6 @@ if __name__ == "__main__":
         name="jumia_scraper",
         work_pool_name="jumia-managed-pool",
         schedule=schedule,
-        push=True
+        push=True,
+        build=False
     )
