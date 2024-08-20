@@ -4,7 +4,7 @@ from prefect.client.schemas.schedules import CronSchedule
 
 if __name__ == "__main__":
     schedule = CronSchedule(
-        cron="30 15 * * *",
+        cron="00 16 * * *",
         timezone="Africa/Nairobi"
     )
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         entrypoint="jumia_flow.py:scrape_jumia"
     ).deploy(
         name="jumia-scraping-deployment",
-        work_pool_name="jumia-managed-pool",
+        work_pool_name="jumia-scraping-pool",
         schedule=schedule,
         tags=["scraping", "jumia"],
         job_variables={"pip_packages": ["scrapy", "pymongo", "datetime"]},
