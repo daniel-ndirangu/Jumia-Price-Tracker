@@ -26,17 +26,20 @@ deployments:
   description: null
   entrypoint: jumia_flow.py:run_all_task
   parameters: {}
- work_pool:
-  name: managed-pool
-  work_queue_name: null
-  job_variables:
-    PYTHON_PACKAGES:
-      - scrapy
+  work_pool:
+    name: managed-pool
+    work_queue_name: null
+    job_variables: {}
   enforce_parameter_schema: true
   schedules:
-  - cron: 0 3 * * *
+  - cron: 0 0 * * *
     timezone: Africa/Nairobi
     day_or: true
     active: true
     max_active_runs: null
     catchup: false
+
+# Specify dependencies needed for the project
+dependencies:
+  - name: scrapy
+    constraint: ">=2.0.0"
