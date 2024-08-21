@@ -8,4 +8,5 @@ if __name__ == "__main__":
         name="my-first-deployment",
         work_pool_name="my-managed-pool",
         cron="0 20 * * *",
+        job_variables={"pip_packages": ["scrapy", "scrapy-playwright", "python-dotenv", "pymongo"]}
     )
