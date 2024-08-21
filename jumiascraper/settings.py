@@ -21,7 +21,7 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 
 # MongoDB settings
-MONGO_URI = 
+#MONGO_URI = 
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
