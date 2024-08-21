@@ -20,13 +20,30 @@ from scrapy.settings import Settings
 from jumiascraper.spiders.samsung import SamsungSpider
 
 
+# @flow
+# def run_scraper():
+    
+#     process = CrawlerProcess()
+#     process.crawl(SamsungSpider)
+#     process.start()
+    
+# if __name__ == "__main__":
+#     run_scraper()
+
+
+import subprocess
+from prefect import task,flow,get_run_logger
+
+
+@task
+def run_query():
+    query = 'scrapy crawl products'
+    proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    stdout, stderr = proc.communicate()
+    if proc.returncode != 0:
+        raise Exception(stderr.decode())
 @flow
-def run_scraper():
-    
-    process = CrawlerProcess()
-    process.crawl(SamsungSpider)
-    process.start()
-    
-if __name__ == "__main__":
-    run_scraper()
+def run_all_task():
+  run_query()
+
     
