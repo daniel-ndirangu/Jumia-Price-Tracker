@@ -1,6 +1,6 @@
 *.csv
 __pycache__
-jumiascraper/settings.py
+config.py
 
 
 
