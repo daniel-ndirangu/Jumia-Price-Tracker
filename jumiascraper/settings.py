@@ -31,6 +31,11 @@ MONGO_URI = os.getenv("MONGO_URI")
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
+MONGO_TIMEOUT = {
+    'connect': 6000,  # Connection timeout in milliseconds
+    'socket': 180000,   # Socket timeout in milliseconds
+}
+
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

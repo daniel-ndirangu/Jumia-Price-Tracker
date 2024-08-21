@@ -35,7 +35,7 @@ import subprocess
 from prefect import task,flow,get_run_logger
 
 
-@task
+@task(retries=2)
 def run_query():
     query = 'scrapy crawl products'
     proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)

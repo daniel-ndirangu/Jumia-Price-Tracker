@@ -34,10 +34,11 @@ class NoDuplicateProductsPipeline:
         
         
 class MongoDBTimeSeriesPipeline:
-    def __init__(self, mongo_uri, mongo_db, mongo_collection):
+    def __init__(self, mongo_uri, mongo_db, mongo_collection, mongo_timeout):
         self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
         self.mongo_collection = mongo_collection
+        self.mongo_timeout = mongo_timeout
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -45,7 +46,8 @@ class MongoDBTimeSeriesPipeline:
         return cls(
             mongo_uri=crawler.settings.get('MONGO_URI'),
             mongo_db=crawler.settings.get('MONGO_DATABASE'),
-            mongo_collection=crawler.settings.get('MONGO_COLLECTION')
+            mongo_collection=crawler.settings.get('MONGO_COLLECTION'),
+            mongo_timeout = crawler.settings.get("MONGO_TIMEOUT", {})
         )
 
     def open_spider(self, spider):
