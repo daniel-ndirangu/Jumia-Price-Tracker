@@ -32,7 +32,7 @@ MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
 MONGO_TIMEOUT = {
-    'connect': 6000,  # Connection timeout in milliseconds
+    'connect': 30000,  # Connection timeout in milliseconds
     'socket': 180000,   # Socket timeout in milliseconds
 }
 
