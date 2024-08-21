@@ -1,6 +1,7 @@
 *.csv
 **/__pycache__/
-** settings.py
+settings.py
+
 
 
 
