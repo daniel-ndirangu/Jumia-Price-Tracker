@@ -1,9 +1,9 @@
 import subprocess  
-from scrapy.crawler import CrawlerProcess
-from scrapy.settings import Settings
-from jumiascraper.spiders.samsung import SamsungSpider
+# from scrapy.crawler import CrawlerProcess
+# from scrapy.settings import Settings
+# from .spiders.samsung import SamsungSpider
 from prefect import task,flow,get_run_logger
-import scrapy
+# import scrapy
 
 
 @task(retries=2)
