@@ -27,11 +27,11 @@ deployments:
   entrypoint: jumia_flow.py:run_scraper
   parameters: {}
   work_pool:
-    name: jumia-work-pool
+    name: jumia-managed-pool
     work_queue_name: null
     job_variables: {}
   schedules:
-  - cron: 20 15 * * *
+  - cron: 35 3 * * *
     timezone: Africa/Nairobi
     day_or: true
     active: true
