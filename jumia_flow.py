@@ -45,5 +45,9 @@ def run_query():
 @flow
 def run_all_task():
   run_query()
+  
+  
+if __name__ == "__main__":
+    run_all_task()
 
     
