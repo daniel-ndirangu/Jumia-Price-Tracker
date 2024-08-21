@@ -3,7 +3,7 @@ import subprocess
 # from scrapy.settings import Settings
 # from .spiders.samsung import SamsungSpider
 from prefect import task,flow,get_run_logger
-# import scrapy
+import scrapy
 
 
 @task(retries=2)
