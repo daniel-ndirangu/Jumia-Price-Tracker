@@ -1,4 +1,6 @@
 *.csv
 **/__pycache__/
-*config.py
+** settings.py
+
+
 
