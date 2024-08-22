@@ -9,6 +9,8 @@ from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem
 from datetime import datetime
 from pymongo.mongo_client import MongoClient
+import logging
+from pymongo.errors import PyMongoError
 
 
 # class JumiascraperPipeline:
@@ -66,12 +68,15 @@ class MongoDBTimeSeriesPipeline:
             
         self.collection = self.db[self.mongo_collection]
 
-    def close_spider(self, spider):
-        self.client.close()
+    # def close_spider(self, spider):
+    #     self.client.close()
 
     def process_item(self, item, spider):
         
         # set the timestamp
+        
+        #logging.info(f"Processing item: {item['product']}") ** added
+        
         timestamp = item.get("timestamp")
       
 
@@ -97,5 +102,17 @@ class MongoDBTimeSeriesPipeline:
         }
 
         # Insert the item into the time series collection
-        self.collection.insert_one(dict(item))
+        # self.collection.insert_one(dict(item))      # Initial
+        
+        try:
+             result = self.collection.insert_one(dict(item))
+             logging.info(f"Item inserted with ID: {result.inserted_id}")
+             
+        except PyMongoError as e:
+            logging.error(f"Error inserting item into MongoDB: {e}")
+        
         return item
+    
+    def close_spider(self, spider):
+        logging.info("Closing MongoDB connection")
+        self.client.close()
