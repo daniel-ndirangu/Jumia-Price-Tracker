@@ -115,5 +115,5 @@ class MongoDBTimeSeriesPipeline:
         return item
     
     def close_spider(self, spider):
-        logging.info("Closing MongoDB connection")
+        # logging.info("Closing MongoDB connection")
         self.client.close()

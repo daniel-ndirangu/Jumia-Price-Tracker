@@ -30,7 +30,7 @@ def run_all_task():
 
 if __name__ == "__main__":
   
-  schedule = CronSchedule(timezone="Africa/Nairobi", cron="45 7 * * *")
+  # schedule = CronSchedule(timezone="Africa/Nairobi", cron="45 7 * * *")
 
   run_all_task.from_source(
     source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
@@ -38,6 +38,8 @@ if __name__ == "__main__":
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-work-pool",
-       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime", "logging"]})
+       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime"]},
+       cron = "0 16 * * *"
+       )
 
     

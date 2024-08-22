@@ -9,7 +9,6 @@
 
 import os
 from dotenv import load_dotenv
-import logging
 
 # Load environment variables from the .env file
 import dotenv
@@ -121,6 +120,6 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 
 
-# Add this to your settings.py
-LOG_LEVEL = 'INFO' #*********************************added
-LOG_FILE = 'spider.log'  # This will create a log file in your project directory ****************** added
+# # Add this to your settings.py
+# LOG_LEVEL = 'INFO' #*********************************added
+# LOG_FILE = 'spider.log'  # This will create a log file in your project directory ****************** added
