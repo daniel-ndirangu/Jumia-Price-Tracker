@@ -47,7 +47,7 @@ if __name__ == "__main__":
        name="my-first-deployment",
        work_pool_name="my-work-pool",
        job_variables={"pip_packages": ["scrapy", "scrapy-playwright", "pymongo", "w3lib", "datetime"]},
-       cron = "20 19 * * *"
+       cron = "35 19 * * *"
        )
 
     
