@@ -14,7 +14,14 @@ from prefect.client.schemas.schedules import IntervalSchedule, CronSchedule
 def run_query():
     logger = get_run_logger()
     logger.info("Starting Scrapy spider...")
+    
     settings = get_project_settings()
+    
+    settings.set('MONGO_URI', os.getenv('MONGOAT_URI'))
+    settings.set('MONGO_DATABASE', 'ecommerce_db')
+    settings.set('MONGO_COLLECTION', 'samsung_timeseries')
+    
+   
     process = CrawlerProcess(settings)
     process.crawl(SamsungSpider)
     process.start()
@@ -29,9 +36,6 @@ def run_all_task():
   
 
 if __name__ == "__main__":
-  
-  # schedule = CronSchedule(timezone="Africa/Nairobi", cron="45 7 * * *")
-
   run_all_task.from_source(
     source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
     entrypoint="jumia_flow.py:run_all_task", 
