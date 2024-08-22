@@ -2,22 +2,27 @@ import subprocess
 import dotenv
 from prefect import task,flow,get_run_logger
 import os
+from scrapy.utils.project import get_project_settings
+from scrapy.crawler import CrawlerProcess
+from scrapy.settings import Settings
+from jumiascraper.spiders.samsung import SamsungSpider
+
+
 
 
 
 @task(retries=2)
 def run_query():
-  env = os.environ.copy()
-  query = 'scrapy crawl products'
-  proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, env=env )
-  stdout, stderr = proc.communicate()
-  if proc.returncode != 0:
-    raise Exception(stderr.decode())
-   
+    settings = get_project_settings()
+    process = CrawlerProcess(settings)
+    process.crawl(SamsungSpider)
+    process.start()
+
 
 @flow
 def run_all_task():
-  run_query()
+    run_query()
+
 
   
 
