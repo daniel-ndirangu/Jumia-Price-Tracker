@@ -12,10 +12,13 @@ from prefect.client.schemas.schedules import IntervalSchedule, CronSchedule
 
 @task(retries=2)
 def run_query():
+    logger = get_run_logger()
+    logger.info("Starting Scrapy spider...")
     settings = get_project_settings()
     process = CrawlerProcess(settings)
     process.crawl(SamsungSpider)
     process.start()
+    logger.info("Scrapy spider finished.")
 
 
 @flow
