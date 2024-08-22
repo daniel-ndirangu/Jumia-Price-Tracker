@@ -11,7 +11,11 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
-load_dotenv()
+import dotenv
+
+dotenv.load_dotenv()
+
+
 
 BOT_NAME = "jumiascraper"
 
@@ -27,14 +31,10 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 
 # MongoDB settings
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URI = dotenv.dotenv_values()['MONGO_URI']
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
-MONGO_TIMEOUT = {
-    'connect': 30000,  # Connection timeout in milliseconds
-    'socket': 180000,   # Socket timeout in milliseconds
-}
 
 
 
