@@ -87,7 +87,7 @@ COOKIES_ENABLED = True # comment out changed to True ************************
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 #    "jumiascraper.pipelines.JumiascraperPipeline": 100,
-   "jumiascraper.pipelines.NoDuplicateProductsPipeline": 100,
+#    "jumiascraper.pipelines.NoDuplicateProductsPipeline": 100,
    "jumiascraper.pipelines.TimestampPipeline":200,
    "jumiascraper.pipelines.MongoDBTimeSeriesPipeline":300
 }
