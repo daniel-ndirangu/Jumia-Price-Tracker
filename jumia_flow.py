@@ -9,7 +9,7 @@ from jumiascraper.spiders.samsung import SamsungSpider
 from prefect.client.schemas.schedules import IntervalSchedule, CronSchedule
 
 
-schedule = CronSchedule(timezone="Africa/Nairobi", cron="30, 7 * * *")
+schedule = CronSchedule(timezone="Africa/Nairobi", cron="30 7 * * *")
 
 
 @task(retries=2)
