@@ -1,6 +1,5 @@
 import subprocess  
 from prefect import task,flow,get_run_logger
-import os
 
 
 

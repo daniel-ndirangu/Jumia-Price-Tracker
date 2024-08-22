@@ -15,8 +15,6 @@ import dotenv
 
 dotenv.load_dotenv()
 
-
-
 BOT_NAME = "jumiascraper"
 
 SPIDER_MODULES = ["jumiascraper.spiders"]
