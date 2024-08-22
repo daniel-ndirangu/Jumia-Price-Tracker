@@ -1,4 +1,3 @@
-import subprocess  
 from prefect import task,flow,get_run_logger
 from scrapy.utils.project import get_project_settings
 from scrapy.crawler import CrawlerProcess
@@ -36,6 +35,7 @@ def run_all_task():
     run_query()
     
 
+
 if __name__ == "__main__":
   run_all_task.from_source(
     source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
@@ -43,7 +43,7 @@ if __name__ == "__main__":
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-work-pool",
-       job_variables={"pip_packages": ["scrapy", "scrapy-playwright", "pymongo", "w3lib", "datetime", "prefect"]},
+       job_variables={"env": {"EXTRA_PIP_PACKAGES": "pymongo scrapy scrapy-playwright prefect datetime"}},
        cron = "20 20 * * *"
        )
 
