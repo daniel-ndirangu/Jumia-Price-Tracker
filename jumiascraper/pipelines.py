@@ -11,6 +11,7 @@ from datetime import datetime
 from pymongo.mongo_client import MongoClient
 import logging
 from pymongo.errors import PyMongoError
+from prefect import task,flow,get_run_logger
 
 
 # class JumiascraperPipeline:

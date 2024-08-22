@@ -38,6 +38,6 @@ if __name__ == "__main__":
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-work-pool",
-       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime"]})
+       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime", "logging"]})
 
     
