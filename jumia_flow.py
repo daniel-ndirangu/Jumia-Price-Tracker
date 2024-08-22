@@ -1,12 +1,15 @@
 import subprocess  
+import dotenv
 from prefect import task,flow,get_run_logger
+import os
 
 
 
 @task(retries=2)
 def run_query():
+  env = os.environ.copy()
   query = 'scrapy crawl products'
-  proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, )
+  proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, env=env )
   stdout, stderr = proc.communicate()
   if proc.returncode != 0:
     raise Exception(stderr.decode())
