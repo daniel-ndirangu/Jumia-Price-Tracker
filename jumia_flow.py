@@ -6,9 +6,10 @@ from scrapy.utils.project import get_project_settings
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 from jumiascraper.spiders.samsung import SamsungSpider
+from prefect.client.schemas.schedules import IntervalSchedule, CronSchedule
 
 
-
+schedule = CronSchedule(timezone="Africa/Nairobi", cron="20, 7 * * *")
 
 
 @task(retries=2)
@@ -29,11 +30,12 @@ def run_all_task():
 if __name__ == "__main__":
   run_all_task.from_source(
     source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
-    entrypoint="jumia_flow.py:run_all_task"
+    entrypoint="jumia_flow.py:run_all_task", 
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-work-pool",
-       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime"]},
-       cron="40 3 * * *")
+       job_variables={"pip_packages": ["scrapy", "python-dotenv", "scrapy-playwright", "pymongo", "w3lib", "datetime"]}, 
+       schedule=schedule
+       )
 
     
