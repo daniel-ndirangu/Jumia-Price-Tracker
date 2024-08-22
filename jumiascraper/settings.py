@@ -30,7 +30,7 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 
 # MongoDB settings
-MONGO_URI =  Secret.load("mongoat_uri").get()          #os.getenv("MONGOAT_URI")
+MONGO_URI =  Secret.load("mongo-uri").get()          #os.getenv("MONGOAT_URI")
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
