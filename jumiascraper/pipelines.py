@@ -103,14 +103,14 @@ class MongoDBTimeSeriesPipeline:
         }
 
         # Insert the item into the time series collection
-        # self.collection.insert_one(dict(item))      # Initial
+        self.collection.insert_one(dict(item))      # Initial
         
-        try:
-             result = self.collection.insert_one(dict(item))
-             logging.info(f"Item inserted with ID: {result.inserted_id}")
+        # try:
+        #      result = self.collection.insert_one(dict(item))
+        #      logging.info(f"Item inserted with ID: {result.inserted_id}")
              
-        except PyMongoError as e:
-            logging.error(f"Error inserting item into MongoDB: {e}")
+        # except PyMongoError as e:
+        #     logging.error(f"Error inserting item into MongoDB: {e}")
         
         return item
     
