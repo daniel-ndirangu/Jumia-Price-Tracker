@@ -37,14 +37,15 @@ def run_all_task():
 
 
 if __name__ == "__main__":
-  run_all_task.from_source(
-    source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
-    entrypoint="jumia_flow.py:run_all_task", 
-     ).deploy(
-       name="my-first-deployment",
-       work_pool_name="my-work-pool",
-       job_variables={"env": {"EXTRA_PIP_PACKAGES": "pymongo scrapy scrapy-playwright prefect datetime"}},
-       cron = "20 20 * * *"
-       )
+  run_all_task()
+  # .from_source(
+  #   source="https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git",
+  #   entrypoint="jumia_flow.py:run_all_task", 
+  #    ).deploy(
+  #      name="my-first-deployment",
+  #      work_pool_name="my-work-pool",
+  #      job_variables={"env": {"EXTRA_PIP_PACKAGES": "pymongo scrapy scrapy-playwright prefect datetime"}},
+  #      cron = "20 20 * * *"
+  #      )
 
     
