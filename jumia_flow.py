@@ -6,7 +6,6 @@ import os
 
 @task(retries=2)
 def run_query():
-  env = os.environ.copy()
   query = 'scrapy crawl products'
   proc = subprocess.Popen(query, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, )
   stdout, stderr = proc.communicate()
