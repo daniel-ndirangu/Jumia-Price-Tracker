@@ -7,13 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
+from prefect.blocks.system import Secret
 
 # Load environment variables from the .env file
-import dotenv
+# import dotenv
 
-dotenv.load_dotenv()
+# dotenv.load_dotenv()
 
 BOT_NAME = "jumiascraper"
 
@@ -29,7 +30,7 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 
 # MongoDB settings
-MONGO_URI = os.getenv("MONGOAT_URI")
+MONGO_URI =  Secret.load("MONGOAT_URI").get()          #os.getenv("MONGOAT_URI")
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
