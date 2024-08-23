@@ -46,7 +46,7 @@ if __name__ == "__main__":
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-work-pool",
-       job_variables={"EXTRA_PIP_PACKAGES": "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime"},
+       job_variables={"EXTRA_PIP_PACKAGES": "prefect" "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime"},
       #  image="prefecthq/prefect:2-latest",
        interval = timedelta(hours=8),
       #  push=False
