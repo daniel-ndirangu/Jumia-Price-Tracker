@@ -48,6 +48,7 @@ if __name__ == "__main__":
        work_pool_name="my-work-pool",
        job_variables={"pip_packages": ["scrapy", "scrapy-playwright", "pymongo", "datetime"]},
        image="prefecthq/prefect:3-latest",
-       interval = timedelta(hours=8)
+       interval = timedelta(hours=8),
+       push=False
        )
     
