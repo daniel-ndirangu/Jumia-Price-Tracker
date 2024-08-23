@@ -1,6 +1,5 @@
 from prefect import task,flow,get_run_logger
 from scrapy.utils.project import get_project_settings
-from prefect.deployments import Deployment
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 from jumiascraper.spiders.samsung import SamsungSpider
