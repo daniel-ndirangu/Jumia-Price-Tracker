@@ -19,9 +19,9 @@ def run_query():
     
     settings = get_project_settings()
     
-    # settings.set('MONGO_URI', mongo_uri)  
-    # settings.set('MONGO_DATABASE', 'ecommerce_db')
-    # settings.set('MONGO_COLLECTION', 'samsung_timeseries')
+    settings.set('MONGO_URI', Secret.load("mongoat-uri").get())  
+    settings.set('MONGO_DATABASE', 'ecommerce_db')
+    settings.set('MONGO_COLLECTION', 'samsung_timeseries')
     
    
     process = CrawlerProcess(settings)
