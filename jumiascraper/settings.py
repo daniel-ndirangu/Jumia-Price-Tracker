@@ -120,9 +120,3 @@ AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0 # comment out ****************************
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-
-
-
-# # Add this to your settings.py
-# LOG_LEVEL = 'INFO' #*********************************added
-# LOG_FILE = 'spider.log'  # This will create a log file in your project directory ****************** added
