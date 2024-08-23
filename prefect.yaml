@@ -4,7 +4,7 @@
 
 # Generic metadata about this project
 name: jumiascraper
-prefect-version: 3.0.0rc18
+prefect-version: 2.20.3
 
 # build section allows you to manage and build docker images
 build:
@@ -18,27 +18,35 @@ pull:
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
     access_token:
-- prefect.deployments.steps.pip_install:
+- prefect.deployments.steps.pip_install_requirements:
     requirements_file: requirements.txt
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name: my-first-deployment
+- name:
   version:
   tags: []
   description:
   schedule: {}
+  flow_name:
+  entrypoint:
+  parameters: {}
+  work_pool:
+    name:
+    work_queue_name:
+    job_variables: {}
+- name: my-first-deployment
+  version:
+  tags: []
+  description:
   entrypoint: jumia_flow.py:run_all_task
   parameters: {}
   work_pool:
     name: my-managed-pool
     work_queue_name:
     job_variables: {}
-  enforce_parameter_schema: true
   schedules:
   - interval: 28800.0
-    anchor_date: '2024-08-23T21:20:38.291374+00:00'
-    timezone: Africa/Nairobi
+    anchor_date: '2024-08-23T21:46:58.270279+00:00'
+    timezone: UTC
     active: true
-    max_active_runs:
-    catchup: false

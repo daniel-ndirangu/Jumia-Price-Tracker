@@ -65,7 +65,7 @@ googleapis-common-protos==1.63.2
 graphql-core==3.2.3
 graphviz==0.20.3
 greenlet==3.0.3
-griffe==0.47.0
+griffe==1.2.0
 grpcio==1.65.1
 h11==0.14.0
 h2 @ file:///home/conda/feedstock_root/build_artifacts/h2_1634280454336/work
@@ -156,7 +156,7 @@ pinecone-plugin-inference==1.0.2
 pinecone-plugin-interface==0.0.7
 platformdirs==4.2.2
 playwright==1.45.0
-prefect==3.0.0rc18
+prefect==2.20.3
 prefect-github==0.2.7
 preshed @ file:///home/conda/feedstock_root/build_artifacts/preshed_1695644746891/work
 prometheus_client==0.20.0
