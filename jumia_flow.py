@@ -14,14 +14,16 @@ def run_query():
     logger.info("Starting Scrapy spider...")
     
     
-    # # Fetch the MONGOAT_URI secret from Prefect
+    # Fetch the mongo_URI secret from Prefect
     # mongo_uri = Secret.load("mongoat-uri").get()
     
     settings = get_project_settings()
     
-    settings.set('MONGO_URI', Secret.load("mongoat-uri").get())  
-    settings.set('MONGO_DATABASE', 'ecommerce_db')
-    settings.set('MONGO_COLLECTION', 'samsung_timeseries')
+    # settings.set('MONGO_URI', Secret.load("mongo-uri").get())  
+    # settings.set('MONGO_URI', Secret.load("mongo-uri").get())
+    
+    # settings.set('MONGO_DATABASE', 'ecommerce_db')
+    # settings.set('MONGO_COLLECTION', 'samsung_timeseries')
     
    
     process = CrawlerProcess(settings)

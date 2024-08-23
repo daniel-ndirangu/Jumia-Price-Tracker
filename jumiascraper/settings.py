@@ -28,9 +28,11 @@ DOWNLOAD_HANDLERS = {
 
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
+mongo_uri = Secret.load("mongo-uri").get()
 
 # MongoDB settings
-MONGO_URI =  Secret.load("mongo-uri").get()          #os.getenv("MONGOAT_URI")
+# MONGO_URI =  Secret.load("mongo-uri").get()          #os.getenv("MONGOAT_URI")
+MONGO_URI =  mongo_uri
 MONGO_DATABASE = 'ecommerce_db'
 MONGO_COLLECTION = 'samsung_timeseries'
 
