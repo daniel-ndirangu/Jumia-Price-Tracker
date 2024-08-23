@@ -8,9 +8,6 @@ prefect-version: 2.20.3
 
 # build section allows you to manage and build docker images
 build:
-- prefect.deployments.steps.run_shell_script:
-    script: pip install scrapy
-
 
 # push section allows you to manage if and how this project is uploaded to remote locations
 push:
@@ -18,10 +15,12 @@ push:
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
+    id: cloned-step
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
     access_token:
 - prefect.deployments.steps.pip_install_requirements:
+    directory: "{{ clone-step.directory }}"
     requirements_file: requirements.txt
 
 # the deployments section allows you to provide configuration for deploying flows
