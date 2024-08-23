@@ -1,8 +1,0 @@
-playwright==1.45.0
-prefect==3.0.0rc18
-prefect-github==0.2.7
-pymongo==4.8.0
-Scrapy==2.11.2
-scrapy-fake-useragent==1.4.4
-scrapy-playwright==0.0.40
-scrapy-user-agents==0.1.1
