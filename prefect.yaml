@@ -17,8 +17,8 @@ pull:
 - prefect.deployments.steps.git_clone:
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
-# - prefect.deployments.steps.pip_install_requirements:
-#     requirements_file: requirements.txt
+- prefect.deployments.steps.pip_install_requirements:
+    requirements_file: requirements.txt
 
 
 # the deployments section allows you to provide configuration for deploying flows
