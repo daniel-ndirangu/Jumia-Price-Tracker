@@ -8,6 +8,9 @@ prefect-version: 2.20.3
 
 # build section allows you to manage and build docker images
 build:
+- prefect.deployments.steps.ru_shell_script:
+    script: pip install scrapy
+
 
 # push section allows you to manage if and how this project is uploaded to remote locations
 push:
@@ -48,5 +51,5 @@ deployments:
   schedules:
   - interval: 28800.0
     anchor_date: '2024-08-23T21:46:58.270279+00:00'
-    timezone: UTC
+    timezone: Africa/Nairobi
     active: true
