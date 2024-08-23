@@ -46,7 +46,10 @@ if __name__ == "__main__":
      ).deploy(
        name="my-first-deployment",
        work_pool_name="my-managed-pool",
-       job_variables={"EXTRA_PIP_PACKAGES": "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime"},
+       job_variables={
+         "env": 
+           {"EXTRA_PIP_PACKAGES": "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime"}
+           },
        interval = timedelta(hours=8)
        )
     
