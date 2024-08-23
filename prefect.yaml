@@ -35,7 +35,7 @@ deployments:
     job_variables: {}
   enforce_parameter_schema: true
   schedules:
-  - cron: 30 2 * * *
+  - cron: 30 3 * * *
     timezone: Africa/Nairobi
     day_or: true
     active: true
