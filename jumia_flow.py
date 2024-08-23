@@ -1,5 +1,6 @@
 from prefect import task,flow,get_run_logger
 from scrapy.utils.project import get_project_settings
+from prefect.deployments import Deployment
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 from jumiascraper.spiders.samsung import SamsungSpider
@@ -47,7 +48,7 @@ if __name__ == "__main__":
        name="my-first-deployment",
        work_pool_name="my-work-pool",
        job_variables={"pip_packages": ["scrapy", "scrapy-playwright", "pymongo", "prefect", "datetime"]},
+       image="prefecthq/prefect:3-latest",
        interval = timedelta(hours=8)
        )
-
     
