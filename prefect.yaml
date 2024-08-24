@@ -15,9 +15,11 @@ push:
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
+    id: clone-repo
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
 - prefect.deployments.steps.pip_install_requirements:
+    directory: "{{ clone-repo.directory }}"
     requirements_file: requirements_txt
 
 # the deployments section allows you to provide configuration for deploying flows
