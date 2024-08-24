@@ -18,7 +18,7 @@ pull:
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
 - prefect.deployments.steps.set_working_directory:
-    directory: "."
+    directory: "/opt/prefect"
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
