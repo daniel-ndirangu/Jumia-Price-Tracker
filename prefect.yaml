@@ -17,7 +17,8 @@ pull:
 - prefect.deployments.steps.git_clone:
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
-    access_token:
+- prefect.deployments.steps.pip_install_requirements:
+    requirements_file: requirements_txt
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
@@ -46,5 +47,5 @@ deployments:
   schedules:
   - interval: 28800.0
     anchor_date: '2024-08-24T03:46:16.627177+00:00'
-    timezone: UTC
+    timezone: Africa/Nairobi
     active: true
