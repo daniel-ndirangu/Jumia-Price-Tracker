@@ -156,8 +156,7 @@ pinecone-plugin-inference==1.0.2
 pinecone-plugin-interface==0.0.7
 platformdirs==4.2.2
 playwright==1.45.0
-prefect==2.20.3
-prefect-github==0.2.7
+prefect==3.0.0rc19
 preshed @ file:///home/conda/feedstock_root/build_artifacts/preshed_1695644746891/work
 prometheus_client==0.20.0
 prompt_toolkit==3.0.47
