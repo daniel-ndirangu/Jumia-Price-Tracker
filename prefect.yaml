@@ -17,21 +17,11 @@ pull:
 - prefect.deployments.steps.git_clone:
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
+- prefect.deployments.steps.set_working_directory:
+    directory: "/Jumia-Price-Tracker"
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name:
-  version:
-  tags: []
-  description:
-  schedule: {}
-  flow_name:
-  entrypoint:
-  parameters: {}
-  work_pool:
-    name:
-    work_queue_name:
-    job_variables: {}
 - name: my-first-deployment
   version:
   tags: []
@@ -40,7 +30,7 @@ deployments:
   parameters: {}
   work_pool:
     name: my-managed-pool
-    work_queue_name:
+    work_queue_name: default
     job_variables:
       env:
         EXTRA_PIP_PACKAGES: "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime prefect"
