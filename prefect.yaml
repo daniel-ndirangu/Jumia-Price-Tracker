@@ -7,10 +7,10 @@ name: jumiascraper
 prefect-version: 2.20.3
 
 # build section allows you to manage and build docker images
-build:
+build: null
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push:
+push: null
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
@@ -21,19 +21,17 @@ pull:
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
 - name: my-first-deployment
-  version:
+  version: null
   tags: []
-  description:
+  description: null
   entrypoint: jumia_flow.py:run_all_task
   parameters: {}
   work_pool:
     name: my-managed-pool
-    work_queue_name: default
-    job_variables:
-      env:
-        EXTRA_PIP_PACKAGES: "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime prefect"
+    work_queue_name: null
+    job_variables: {}
   schedules:
   - interval: 28800.0
-    anchor_date: '2024-08-24T12:04:38.780276+00:00'
+    anchor_date: '2024-08-24T13:30:36.174509+00:00'
     timezone: UTC
     active: true
