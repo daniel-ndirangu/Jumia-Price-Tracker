@@ -42,7 +42,6 @@ deployments:
     name: my-managed-pool
     work_queue_name:
     job_variables:
-      image: "prefecthq/prefect:2-latest"
       env:
         EXTRA_PIP_PACKAGES: "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime"
   schedules:
