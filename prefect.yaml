@@ -15,13 +15,8 @@ push:
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
-    id: clone-repo
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
-- prefect.deployments.steps.pip_install_requirements:
-    directory: "{{ clone-repo.directory }}"
-    requirements_file: requirements.txt
-
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
@@ -47,7 +42,9 @@ deployments:
   work_pool:
     name: my-managed-pool
     work_queue_name:
-    job_variables: {}
+    job_variables: 
+      env:
+         EXTRA_PIP_PACKAGES: "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime prefect"
   enforce_parameter_schema: true
   schedules:
   - interval: 28800.0
