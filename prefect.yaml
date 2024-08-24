@@ -28,7 +28,7 @@ deployments:
   parameters: {}
   work_pool:
     name: my-managed-pool
-    work_queue_name: null
+    work_queue_name: default
     job_variables: { "env": 
            {"EXTRA_PIP_PACKAGES": "scrapy==2.11.2 scrapy-playwright==0.0.40 pymongo==4.8.0 datetime prefect"}}
   schedules:
