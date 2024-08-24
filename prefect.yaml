@@ -19,10 +19,8 @@ pull:
     id: clone-step
     repository: https://github.com/daniel-ndirangu/Jumia-Price-Tracker.git
     branch: main
-    access_token:
-    
 - prefect.deployments.steps.pip_install_requirements:
-    directory: {{ clone-step.directory }}
+    directory: "{{ clone-step.directory }}"
     requirements_file: requirements.txt
 
 # the deployments section allows you to provide configuration for deploying flows
