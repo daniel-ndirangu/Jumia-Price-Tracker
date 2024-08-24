@@ -66,7 +66,7 @@ orjson==3.10.7
 packaging==24.1
 parsel==1.9.1
 pathspec==0.12.1
-pendulum==3.0.0
+pendulum
 playwright==1.46.0
 prefect==2.20.3
 prometheus_client==0.20.0
