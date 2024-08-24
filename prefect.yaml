@@ -12,7 +12,6 @@ build:
 # push section allows you to manage if and how this project is uploaded to remote locations
 push:
 
-
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
@@ -51,8 +50,8 @@ deployments:
   enforce_parameter_schema: true
   schedules:
   - interval: 28800.0
-    anchor_date: '2024-08-24T00:20:14.921812+00:00'
-    timezone: UTC
+    anchor_date: '2024-08-24T01:12:40.898403+00:00'
+    timezone: Africa/Nairobi
     active: true
     max_active_runs:
     catchup: false
