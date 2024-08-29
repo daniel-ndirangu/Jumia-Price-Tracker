@@ -22,6 +22,14 @@ def remove_percentage(value):
         return int(clean_value)
     except Exception as e:
         return value
+    
+def add_root_url(url):
+    """add the base url"""
+    try:
+        whole_url = f"https://www.jumia.co.ke{url}"
+        return whole_url
+    except Exception as e:
+        return url
 
 class JumiascraperItem(scrapy.Item):
     
@@ -56,3 +64,8 @@ class JumiascraperItem(scrapy.Item):
     )
     
     timestamp = scrapy.Field()
+    
+    url = scrapy.Field(
+        input_processor = MapCompose(remove_tags, str.strip, add_root_url),
+        output_processor = TakeFirst()
+    )

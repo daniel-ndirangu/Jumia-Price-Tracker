@@ -13,10 +13,6 @@ from pymongo.errors import PyMongoError
 from prefect import task,flow,get_run_logger
 
 
-# class JumiascraperPipeline:
-#     def process_item(self, item, spider):
-#         return item
-
 
 class TimestampPipeline:
     def process_item(self, item, spider):
@@ -73,10 +69,7 @@ class MongoDBTimeSeriesPipeline:
 
     def process_item(self, item, spider):
         
-        # set the timestamp
-        
-        #logging.info(f"Processing item: {item['product']}") ** added
-        
+        # Add timestamp        
         timestamp = item.get("timestamp")
       
 
@@ -104,15 +97,7 @@ class MongoDBTimeSeriesPipeline:
         # Insert the item into the time series collection
         self.collection.insert_one(dict(item))      # Initial
         
-        # try:
-        #      result = self.collection.insert_one(dict(item))
-        #      logging.info(f"Item inserted with ID: {result.inserted_id}")
-             
-        # except PyMongoError as e:
-        #     logging.error(f"Error inserting item into MongoDB: {e}")
-        
         return item
     
     def close_spider(self, spider):
-        # logging.info("Closing MongoDB connection")
         self.client.close()

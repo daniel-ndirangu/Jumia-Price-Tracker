@@ -25,7 +25,7 @@ class SamsungSpider(scrapy.Spider):
             
             item.add_css("store_discount", "div.bdg._dsct._sm::text") # Discounts
             
-            # item.add_css("url", "a.core::attr(href)")
+            item.add_css("url", "a.core::attr(href)")
             
             product_link = product.css("a.core::attr(href)").get() 
             
