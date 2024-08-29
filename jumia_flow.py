@@ -96,7 +96,7 @@ def check_discounts_and_notify(comparison_df):
     
     if not high_discounts.empty:
         subject = "Samsung Discount Alert!!"
-        body = "The following products have discounts:\n\n"
+        body = "The following products have discounts above > 20:\n\n"
         for _, row in high_discounts.iterrows():
             body += f"Product: {row['Product']}\n"
             body += f"Current Price: Ksh {row['Price']:.2f}\n"
